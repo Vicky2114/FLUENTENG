@@ -37,11 +37,10 @@
       <div class="profile">
          <img src="<%=user.avatar%>" class="image" alt="">
          <h3 class="name"><%=user.name%></h3>
-         <p class="role">student</p>
-         <a href="profile.html" class="btn">view profile</a>
+         <p class="role"><%=user.education%></p>
+         <a href="/user/profile/<%=user.id%>" class="btn">view profile</a>
          <div class="flex-btn">
-            <a href="login.html" class="option-btn">login</a>
-            <a href="register.html" class="option-btn">register</a>
+            <a href="/user/sign-out" class="btn">Sign out</a>
          </div>
       </div>
 
@@ -58,8 +57,8 @@
    <div class="profile">
       <img src="<%=user.avatar%>" class="image" alt="">
       <h3 class="name"><%=user.name%></h3>
-      <p class="role">student</p>
-      <a href="profile.html" class="btn">view profile</a>
+      <p class="role"><%=user.education%></p>
+      <a href="/user/profile/<%=user.id%>" class="btn">view profile</a>
    </div>
 
    <nav class="navbar">
@@ -80,7 +79,7 @@
       <div class="user">
          <img src="<%=user.avatar%>" alt="<%=user.name%>">
          <h3><%=user.name%></h3>
-         <p>student</p>
+         <p><%=user.education%></p>
          <a href="/user/update" class="inline-btn">update profile</a>
       </div>
       <div class="box-container">

@@ -36,11 +36,10 @@
       <div class="profile">
          <img src="<%=user.avatar%>" class="image" alt="<%=user.name%>">
          <h3 class="name"><%=user.name%></h3>
-         <p class="role">student</p>
-         <a href="profile.html" class="btn">view profile</a>
+         <p class="role"><%=user.education%></p>
+         <a href="/user/profile/<%=user.id%>" class="btn">view profile</a>
          <div class="flex-btn">
-            <a href="login.html" class="option-btn">login</a>
-            <a href="register.html" class="option-btn">register</a>
+            <a href="/user/sign-out" class="btn">Sign out</a>
          </div>
       </div>
 
@@ -57,8 +56,8 @@
    <div class="profile">
       <img src="<%=user.avatar%>" class="image" alt="<%=user.name%>">
       <h3 class="name"><%=user.name%></h3>
-      <p class="role">studen</p>
-      <a href="profile.html" class="btn">view profile</a>
+      <p class="role"><%=user.education%></p>
+      <a href="/user/profile/<%=user.id%>"class="btn">view profile</a>
    </div>
 
    <nav class="navbar">
@@ -87,6 +86,10 @@
       <input type="password" name="c_pass" placeholder="confirm your new password" maxlength="20" class="box">
       <p>update pic</p>
       <input type="file"name="avatar" class="box">
+      <p>Phone Number</p>
+      <input type="number" name="phone" value="<%=user.Phone%>" placeholder="Phone Number" maxlength="10" class="box">
+      <p>Education</p>
+      <input type="text" name="education" value="<%=user.education%>" placeholder="Education" maxlength="20" class="box">
       <input type="submit" value="update profile" name="submit" class="btn">
    </form>
 

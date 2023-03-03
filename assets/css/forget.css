@@ -1,0 +1,253 @@
+#nav-bar{
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+.navbar{
+    background-image: linear-gradient(to right,#a517ba,#5f1782);
+    padding: 0 !important;
+}
+/*.img-fluid{
+    max-width: 20%;
+    height:15%;
+}*/
+.navbar-brand img{
+    height:40px;
+    padding-left:20px;
+}
+.navbar-nav li{
+    padding:0 10px;
+    color:#fff;
+}
+.navbar-nav li a{
+    color: #fff !important;
+    font-weight: 600;
+    float:right;
+    text-align:left;
+}
+.fa-bars{
+    color:#fff !important;
+    font-size:30px !important;
+}
+.navbar-toggler{
+    outline:none !important;
+}
+/*.navbar-right{
+    margin-right:20px;
+    
+}*/
+/*.dropdown{
+    margin-top: 0;
+    margin-right:0;
+}*/
+
+
+#banner{
+    background-image: linear-gradient(to right,#a517ba,#5f1782);
+    color:#fff;
+    padding-top:5%;
+}
+.promo-title{
+    font-size:40px;
+    font-weight:600;
+    margin-top:100px;
+}
+.play-btn{
+    width:45px;
+    margin:20px;
+}
+#banner a{
+    color:#fff;
+    text-decoration: none;
+}
+.bottom-img{
+    width:100%;
+    /*background-color: #fff;*/
+}
+
+
+#services{
+    padding:80px 0;
+    /*background-image: url("https://www.pngmart.com/files/12/White-Wave-PNG-Image.png");*/
+}
+.services-img{
+    width:100px;
+    margin-top:20px;
+}
+.services{
+    padding:20px;
+}
+.services h4{
+    padding:5px;
+    margin-top:25px;
+    text-transform: uppercase;
+}
+.title::before{
+    content:'';
+    background:#7b1798;
+    height:5px;
+    width:200px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    transform:translateY(63px);
+}
+.title::after{
+    content:'';
+    background:#7b1798;
+    height:10px;
+    width:50px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:40px;
+    display:block;
+    transform:translateY(8px);
+}
+#services .btn-primary{
+box-shadow:none;
+padding:8px 25px;
+border:none;
+border-radius:20px;
+background-image: linear-gradient(to right,#a517ba,#5f1782);
+}
+
+
+/*footer{
+ position:absolute;
+ color:#fff;
+ width:100vw;
+}
+.social{
+    padding:0;
+}
+h4{
+    padding:5px 0px;
+}
+social li{
+    display:inline-block;
+    background-color:#fff;
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    text-align:center;
+    line-height:10px;
+    padding:0cm;
+}
+.social li a i{
+    padding-top:4px;
+    color:#333;
+    transition:.3s;
+    font-size:15px;
+}
+.social li a i:hover{
+   color: rgb(30,118,226);
+   text-decoration:none;
+}
+.footer .links ul{
+    list-style-type:none;
+}
+.footer .links li a{
+    color:#fff;
+    transition:color 0.2s;
+}
+.footer .links li a:hover{
+    text-decoration:none;
+    color:rgb(30,118,226);
+}
+.footer .location i{
+    font-size:10px;
+}
+.footer .copyright p{
+    font-size:1.2rem;
+    text-shadow:1px 1px black;
+    border-top:1px solid rgb(255,255,255,0.8);
+    border-bottom:1px solid rgb(255,255,255,0.8);
+}*/
+
+
+#social-media{
+    background:#f8f9fa;
+    padding:100px 0;
+}
+#social-media p{
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.social-icons img{
+    width:60px;
+    transition:0.5s;
+}
+.social-icons a:hover img{
+transform:translateY(-10px);
+}
+
+
+/*contact us*/
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+#contact{
+    background:url("https://wallpapercave.com/wp/wp2838577.jpg")no-repeat;
+    background-size: 100% 100%;
+    width:100%;
+    height:100vh;
+}
+.head{
+    background-image: linear-gradient(to right,#a517ba,#5f1782);
+    border-radius: 5px;
+    margin-top:-40px;
+    box-shadow: -1px 9px 27px -8px rgba(235,23,235,1);
+
+}
+.effect-1{
+    border:0;
+    outline:none;
+    width:100%;
+    padding:7px 0;
+    border-bottom: 1px solid #ccc;
+}
+.effect-1 ~ .Focus-border{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    width:0;
+    height:2px;
+    background-image: linear-gradient(to right,#a517ba,#5f1782);
+    transition:0.4s;
+}
+.effect-1:focus ~ .Focus-border{
+    width:100%;
+    transition:0.4s;
+    left:0;
+}
+.btn1{
+    background-image: linear-gradient(to right,#a517ba,#5f1782);
+    color:#fff;
+    outline:none;
+    border:none;
+    border-radius: 5px;
+    height:40px;
+    width:145px;
+}
+.btn1:hover{
+    box-shadow: -1px 9px 27px -8px rgba(235,23,235,1);
+}
+
+/*signup*/
+.wrapper{
+    border: 03px solid grey;
+    border-radius: 10px;
+}
+/*.wrapper a{
+    text-decoration: none;
+    color:rgb(125, 74, 183);
+}*/
+
+/*books*/
+/*.box-shadow{
+    box-shadow: 0px 2px 10px rgba(235,23,235,1);
+    
+}*/

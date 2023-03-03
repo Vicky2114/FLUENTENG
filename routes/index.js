@@ -9,6 +9,11 @@ const home=require('../controllers/home_controller');
 router.get('/',home.home);
 router.use('/user', require('./user'));
 router.use('/user',require('./profile'))
+router.use('/forget-password',require('./forgetpassword'))
+router.use('/',require('./quiz'));
+router.use('/',require('./game'));
+router.use('/',require('./books'));
+router.use('/',require('./contactus'));
 
 // for any further routes, access from here
 // router.use('/routerName', require('./routerfile));

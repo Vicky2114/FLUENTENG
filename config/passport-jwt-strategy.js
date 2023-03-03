@@ -7,7 +7,7 @@ const User = require('../models/user');
 
 let opts = {
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-    secretOrKey: 'n2r5u8x/A?D(G+KbPeShVkYp3s6v9y$B'
+    secretOrKey: 'thisisasecretkey'
 }
 
 
