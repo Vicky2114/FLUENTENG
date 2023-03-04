@@ -72,7 +72,10 @@ transition: all 0.3s ease;
     background-color: rgba(255,255,255,0.2);
     margin: 0 10px 10px 0;
     padding:0%;
+<<<<<<< HEAD
     padding-top: 12px;
+=======
+>>>>>>> b6d74c8d5c170ce49026ed9055c6543bec9f0400
     image-rendering: auto;
     text-align: center;
     line-height: 40px;
