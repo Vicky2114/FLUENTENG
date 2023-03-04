@@ -14,6 +14,8 @@ router.use('/',require('./quiz'));
 router.use('/',require('./game'));
 router.use('/',require('./books'));
 router.use('/',require('./contactus'));
+router.use('/',require('./aboutus'));
+router.use('/',require('./typing'));
 
 // for any further routes, access from here
 // router.use('/routerName', require('./routerfile));

@@ -3,9 +3,9 @@ const { Passport } = require('passport');
 const router = express.Router();
 const passport = require('passport');
 
-const books=require('../controllers/books_controller');
+const aboutus=require('../controllers/aboutus_controller');
 
-router.get('/books',passport.checkAuthentication,books.books);
+router.get('/aboutus',passport.checkAuthentication,aboutus.aboutus);
 
 
 
