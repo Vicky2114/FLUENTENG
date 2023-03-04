@@ -94,7 +94,7 @@ module.exports.reset=async function(req,res){
       console.log(user);
       user.save();
       req.flash('success', 'password reset');
-      res.render('https://fluenteng.onrender.com/user');
+      res.render('authentication');
      }catch(error){
         console.log(error.message);
         res.send(error.message);
