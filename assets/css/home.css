@@ -292,3 +292,13 @@ transform:translateY(-10px);
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+  @media screen and (max-width: 480px) {
+    .navbar-nav li{
+        padding:0 0px;
+        color:#fff;
+    }
+    .navbar-right{
+        padding-left: 240px;
+    }
+  }

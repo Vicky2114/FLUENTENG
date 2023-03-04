@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Source+Code+Pro:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- fontawesome -->
     <link rel="stylesheet" href="/css/typing.css">
-    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
   </head>
   <body>
@@ -30,7 +30,7 @@
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                   aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
-                  <i class="fa fa-bars"></i>
+
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav navbar-center">
@@ -58,36 +58,36 @@
                   </div>
 
                   <ul class="navbar-nav navbar-right">
-                      
+                      <li>
                       <%if(locals.user){%>
-                      <a href="user/profile/<%=user.id%>" class="d-block link-dark text-decoration-none dropdown-toggle mr-sm-1"
-                          data-bs-toggle="dropdown" aria-expanded="false">
-                          <img src="<%= user.avatar %>" alt="mdo" width="32" height="32"
+                      <a href="user/profile/<%=user.id%>" class="d-block link-dark text-decoration-none"
+                          data-bs-toggle="  dropdown-toggle mr-sm-1" aria-expanded="false">
+                          <img src="<%= user.avatar %>" alt="mdo" width="25" height="25"
                               class="rounded-circle">
                       </a>
                       <%}else{%>
-                          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle mr-sm-1"
+                          <a href="#" class="d-block link-dark text-decoration-none"
                               data-bs-toggle="dropdown" aria-expanded="false">
-                              <img src="" alt="mdo" width="32" height="32"
+                              <img src="" alt="mdo" width="25" height="25"
                                   class="rounded-circle">
                           </a>
                           <%}%>
-                      <ul class="dropdown-menu text-small">
-                          <li><a class="dropdown-item" href="#">Profile</a></li>
-                          <li>
-                              <hr class="dropdown-divider">
-                          </li>
-                          <li><a class="dropdown-item" href="#">Sign out</a></li>
-                      </ul>
+                      </li>
+                      <ul>
+                              
+                       
+                         
+                      
                       <%if(locals.user){%>
                           <li><a href="/user/sign-out"><button type="button" class="btn btn-outline-light">Sign out</button></a></li>
                        <%}else{%>
                           <li><a href="/user"><button type="button" class="btn btn-outline-light">Sign in</button></a></li>
                       <%}%>
+
                   </ul>
 
-
               </div>
+
           </div>
       </nav>
   </section>
