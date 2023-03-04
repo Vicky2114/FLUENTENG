@@ -599,4 +599,6 @@ transform:translateY(-10px);
       font-size: 4rem;
     }
   }
-  
+.navbar-right{
+    padding-left: 500px;
+  }

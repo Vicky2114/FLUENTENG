@@ -5,7 +5,7 @@ const passport = require('passport');
 
 const game=require('../controllers/game_controller');
 
-router.get('/game',game.game);
+router.get('/game',passport.checkAuthentication,game.game);
 
 
 
