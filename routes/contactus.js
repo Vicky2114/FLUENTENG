@@ -5,7 +5,7 @@ const passport = require('passport');
 
 const contactus=require('../controllers/contactus_controller');
 
-router.get('/contactus',passport.checkAuthentication,contactus.contactus);
+router.get('/contactus',contactus.contactus);
 
 
 

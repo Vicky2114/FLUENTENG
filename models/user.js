@@ -39,6 +39,9 @@ const userSchema = new mongoose.Schema({
     exp:{
         type:String,
     },
+    link:{
+        type:String,
+    }
 
 }, {
     timestamps: true

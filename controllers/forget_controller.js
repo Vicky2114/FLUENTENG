@@ -21,7 +21,7 @@ module.exports.forgetpass=async function(req,res){
                 message: "no user found is thier"
             });
         }
-        
+
         const secret=JWT_SECRET+user.password;
         const payload={
             email:user.email,
@@ -30,14 +30,18 @@ module.exports.forgetpass=async function(req,res){
         const token=jwt.sign(payload,secret,{expiresIn:'1000000000'})
        // jwt.sign(user.toJSON(), 'codeial', {expiresIn:  '100000'})
         const link=`https://fluenteng.onrender.com/forget-password/reset-password/${user.id}/${token}`
+        user.link=link
+        console.log(user.link);
+        user.save();
+        let htmlstring=nodemailer.renderTemplate({user:user},'/email.ejs')
         console.log(link);
        //const link=`http://code-expert-djlq.onrender.com/forget-password/reset-password/${user.id}/${token}`
         //mail processs
         nodemailer.transporter.sendMail({
         from:'vr6994056@gmail.com',
         to:user.email,
-        subject:"forget password link",
-        html:link
+        subject:"Forget Password",
+        html:htmlstring
        })
         req.flash('success','forget link send to your register mail');
         return res.redirect('/');
