@@ -6,6 +6,7 @@ const passport = require('passport');
 const contactus=require('../controllers/contactus_controller');
 
 router.get('/contactus',contactus.contactus);
+router.post('/feedback',contactus.feedback);
 
 
 
