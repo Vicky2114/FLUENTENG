@@ -96,3 +96,14 @@ transition: all 0.3s ease;
         margin-bottom: 30px;
     }
 }
+
+@media screen and (max-width: 480px) {
+    .container{
+      padding: 25px;
+    }
+    .card{
+        width: 100px;
+        height: 400px;
+    }
+
+  }

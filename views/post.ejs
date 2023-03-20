@@ -1,0 +1,85 @@
+<style>
+  .post{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 8px;
+  }
+  .cont{
+    display: flex;
+    flex-direction: row;
+  }
+  .cont1{
+    padding: 5px;
+  }
+  .delete{
+    display: flex;
+    flex-direction: row;
+    
+  }
+  .del1{
+    padding: 5px;
+  }
+</style>
+
+
+<section>
+    
+    <li id="post-<%= post._id %>" class="post">
+       <p>
+           
+           <div class="cont">
+            <div class="cont1"><img src="<%=post.user.avatar%>" alt="<%=post.user.name%>" style="height: 50px;
+                width: 50px;
+                border-radius: 50%;"></div>
+            <div style="font-size: 20px;" class="cont1"><%= post.user.name %></div>
+           </div>
+           <h4 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+           <%= post.content %>
+        </h4>
+           <br>
+          
+   
+          <!-- CHANGE :: display the likes of this post, if the user is logged in, then show the link to toggle likes, else, just show the count -->
+          <!-- study about the data attribute -->
+          <div class="delete">
+      <div class="del1">
+          <% if (locals.user){ %>
+            <form  action="/likes/toggle/?id=<%=post._id%>&type=Post" method="post">
+                <input type="submit" class="toggle-like-button btn btn-primary" value="<%= post.likes.length %> Like" data-likes="<%= post.likes.length %>"> </form>
+          <% }else{ %>
+            <%= post.likes.length %> 
+          <% } %>
+          </div>
+      <% if (locals.user && locals.user.id == post.user.id){ %>
+        <div style="width: auto; " class="del1">
+            <a class="btn btn-danger"  href="/posts/destroy/<%= post.id %>" ">Delete</a>
+        </div>
+        <% } %>
+          </div>
+        
+   
+       </p>
+       <div class="post-comments">
+           <% if (locals.user){ %>
+               <!-- let's give an id to the new comment form, we'll also need to make the same changes in home_posts.js where we're adding a post to the page -->
+               <form id="post-<%= post._id %>-comments-form" action="/comments/create" method="POST">
+                   <input type="text" name="content" placeholder="Type Here to add comment..." required>
+                   <input type="hidden" name="post" value="<%= post._id %>" >
+                   <input type="submit" value="Add Comment">
+               </form>
+   
+           <% } %>
+   
+           <div class="post-comments-list">
+               <ul id="post-comments-<%= post._id %>">
+                   <% for (comment of post.comments){%>
+   
+                    <%- include('comment') -%>
+                       
+                   <%} %>
+               </ul>
+           </div>
+       </div>
+       
+   </li>
+ </section>

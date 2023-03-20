@@ -15,4 +15,3 @@ db.once('open', function(){
 
 module.exports = db;
 
-//gMahMqkZuG1dnkBp

@@ -15,6 +15,15 @@
    <!-- custom css file link  -->
    <!--<link rel="stylesheet" href="/css/contactus.css">-->
    <link rel="stylesheet" href="/css/home.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!--- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">-->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    
    <link rel="stylesheet" href="/css/footer.css">
    
 
@@ -152,10 +161,10 @@
       <div class="accordion active">
          <div class="accordion-heading">
             <h3>how to contact for help?</h3>
-            <i class="fas fa-angle-down"></i>
+            <i class="fas fa-angle-down"><a></a></i>
          </div>
          <p class="accordion-contednt">
-            Lorem ipsum dolor sit,amet consectetur adipisicing elit. Sit consequatur molestias deserunt facere laborum doloremque fuga, quae aut. Recusandae officia quis temporibus! Magnam mollitia nostrum voluptatibus deserunt quidem. Natus, quo.
+            <h4>You can easily contact us via our contact no. provided above .</h4>
          </p>
       </div>
 
@@ -165,7 +174,7 @@
             <i class="fas fa-angle-down"></i>
          </div>
          <p class="accordion-content">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit consequatur molestias deserunt facere laborum doloremque fuga, quae aut. Recusandae officia quis temporibus! Magnam mollitia nostrum voluptatibus deserunt quidem. Natus, quo.
+            Visit to quiz section of our website and click on open which will direct you to quiz questions which you need to submit.
          </p>
       </div>
 
@@ -175,7 +184,7 @@
             <i class="fas fa-angle-down"></i>
          </div>
          <p class="accordion-content">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit consequatur molestias deserunt facere laborum doloremque fuga, quae aut. Recusandae officia quis temporibus! Magnam mollitia nostrum voluptatibus deserunt quidem. Natus, quo.
+            Everyone can access our website freely after signing and can learn english in a fun way.
          </p>
       </div>
 
@@ -185,7 +194,7 @@
             <i class="fas fa-angle-down"></i>
          </div>
          <p class="accordion-content">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit consequatur molestias deserunt facere laborum doloremque fuga, quae aut. Recusandae officia quis temporibus! Magnam mollitia nostrum voluptatibus deserunt quidem. Natus, quo.
+            Go to game section and click on play to play any game of your desire,you will directly enter to that game and can enjoy it for free.
          </p>
       </div>
 
@@ -195,7 +204,7 @@
             <i class="fas fa-angle-down"></i>
          </div>
          <p class="accordion-content">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit consequatur molestias deserunt facere laborum doloremque fuga, quae aut. Recusandae officia quis temporibus! Magnam mollitia nostrum voluptatibus deserunt quidem. Natus, quo.
+            It will help you in checking your writing speed and it will improve it as well.
          </p>
       </div>
 
@@ -205,7 +214,7 @@
             <i class="fas fa-angle-down"></i>
          </div>
          <p class="accordion-content">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit consequatur molestias deserunt facere laborum doloremque fuga, quae aut. Recusandae officia quis temporibus! Magnam mollitia nostrum voluptatibus deserunt quidem. Natus, quo.
+            you can access our website freely and can enjoy games,books reading,etc. that will help you in improving your english.
          </p>
       </div>
 
@@ -213,8 +222,26 @@
 
 </section>
 
-
-
+<section id="feed-posts">
+            <h1 style="font-size: 30px;">Posts</h1>
+            <% if(locals.user){ %>
+            <form action="/posts/create" id="new-post-form" method="POST">
+                <textarea name="content" cols="200" rows="10" placeholder="Type Here..." class="textarea" style="border: 2px solid black; border-radius:10px ; font-size: 10px;" required></textarea>
+                <br>
+                <input type="submit" value="Post" class="btn btn-primary" ;">
+            </form>
+            <% } %>
+        
+            <div id="posts-list-container">
+                <ul>
+                    <% for(post of posts){ %>
+                        
+                    <%- include('post') -%>
+                        
+                    <%} %>
+                </ul>
+            </div>
+        </section>
 
 
 
@@ -271,7 +298,37 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/contactus_post_comments.js" ></script>
+<script src="/js/contactus_posts.js"></script>
 
+<script src="/js/toggle_likes.js"></script>
+<script>
+let accordion = document.querySelectorAll('.faq .accordion-container .accordion');
+
+accordion.forEach(acco =>{
+  acco.onclick = () =>{
+    accordion.forEach(dion => dion.classList.remove('active'));
+    acco.classList.toggle('active');
+  };
+});
+
+document.querySelector('.load-more .btn').onclick = () =>{
+  document.querySelectorAll('.courses .box-container .hide').forEach(show =>{
+    show.style.display = 'block';
+  });
+  document.querySelector('.load-more .btn').style.display = 'none';
+};
+   $('.toggle-like-button').each(function(){
+       let self = this;
+       let toggleLike = new ToggleLike(self);
+   });
+</script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </body>
 </html>

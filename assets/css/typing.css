@@ -113,3 +113,9 @@ textarea{
   text-align: center;
   margin-bottom: 15px;
 }
+.container-fluid.box{
+  background-color: #212121;
+}
+#layout-main{
+  background-color: #212121;
+}

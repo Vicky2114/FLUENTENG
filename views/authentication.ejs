@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign in & Sign up Form</title>
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" integrity="sha256-8WqyJLuWKRBVhxXIL1jBDD7SDxU936oZkCnxQbWwJVw=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/loader.css" />
   </head>
   <body>
     <div id="contain" class="container">
@@ -28,6 +31,9 @@
               <a href="/user/auth/google" class="social-icon">
                 <i class="fab fa-google"></i>
               </a>
+              <a href="/user/auth/github" class="social-icon">
+                <i class="fa fa-github"></i>
+              </a>
             </div>
           </form>
           <form action="/user/create" class="sign-up-form" method="post">
@@ -49,6 +55,9 @@
             <div class="social-media">
               <a href="/user/auth/google" class="social-icon">
                 <i class="fab fa-google"></i>
+              </a>
+              <a href="/user/auth/github" class="social-icon">
+                <i class="fab fa-github"></i>
               </a>
               
             </div>
@@ -83,7 +92,11 @@
         </div>
       </div>
     </div>
+    <div class="ring loader">FluentEng
+      <span></span>
+    </div>
+  
+    <script src="/js/load.js"></script>
     <script src="/js/app.js"></script>
-
   </body>
 </html>

@@ -1,9 +1,37 @@
 const nodemailer = require("../config/nodemailer");
+const Post =require('../models/post')
+const User=require('../models/user');
+const { use } = require("../routes");
 
+module.exports.contactus=async function(req,res){
+    try{
+        // populate the user of each post
+       let posts = await Post.find({})
+       .sort('-createdAt')
+       .populate('user')
+       .populate({
+           path: 'comments',
+           populate: {
+               path: 'user'
+           },
+           populate:{
+               path:'likes'
+           }
+       }).populate('comments')
+       .populate('likes');
+   
+       let users = await User.find({});
 
-module.exports.contactus=function(req,res){
-    console.log('done');
-    return res.render('contactus');
+       return res.render('contactus', {
+           title: "FluentEng",
+           posts:  posts,
+           all_users: users
+       });
+
+   }catch(err){
+       console.log('Error', err);
+       return;
+   }
 }
 module.exports.feedback=function(req,res){
     try{

@@ -5,6 +5,7 @@ const AVATAR_PATH = path.join('/uploads/users/avatars');
 
 
 
+
 const userSchema = new mongoose.Schema({
     name:{
        type:String,
@@ -41,6 +42,9 @@ const userSchema = new mongoose.Schema({
     },
     link:{
         type:String,
+    },
+    score:{
+        type:String,
     }
 
 }, {
@@ -54,7 +58,6 @@ let storage = multer.diskStorage({
       cb(null, file.fieldname + '-' + Date.now());
     }
   });
-
 
 userSchema.statics.uploadedAvatar = multer({storage:  storage}).single('avatar');
 userSchema.statics.avatarPath = AVATAR_PATH;
