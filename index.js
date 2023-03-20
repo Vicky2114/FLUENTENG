@@ -20,7 +20,7 @@ const customMware = require('./config/middleware');
 
 const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
-chatServer.listen(process.env.PORT||5000);
+//chatServer.listen(process.env.PORT||5000);
 console.log('chat server is listening on port 5000');
 
 
