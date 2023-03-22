@@ -22,7 +22,15 @@ const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('chat server is listening on port 5000');
-
+const client = redis.createClient({
+    host: '127.0.0.1',
+    port: 6379,
+  });
+client.connect();
+client.on('connect', (err)=>{
+    if(err) throw err;
+    else console.log('Redis Connected..!');
+}); 
 
 
 app.use(express.urlencoded());
@@ -74,16 +82,7 @@ app.use(passport.setAuthenticatedUser);
 app.use(flash());
 app.use(customMware.setFlash);
 
-app.use('/', require('./routes'));
-const client = redis.createClient({
-    host: '127.0.0.1',
-    port: 6379,
-  });
-client.connect();
-client.on('connect', (err)=>{
-    if(err) throw err;
-    else console.log('Redis Connected..!');
-});  
+app.use('/', require('./routes')); 
 
 app.listen(port, function(err){
     if (err){
