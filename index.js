@@ -1,7 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
-
+const redis=require('redis');
 const port = process.env.PORT||8000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
@@ -75,7 +75,15 @@ app.use(flash());
 app.use(customMware.setFlash);
 
 app.use('/', require('./routes'));
-
+const client = redis.createClient({
+    host: '127.0.0.1',
+    port: 6379,
+  });
+client.connect();
+client.on('connect', (err)=>{
+    if(err) throw err;
+    else console.log('Redis Connected..!');
+});  
 
 app.listen(port, function(err){
     if (err){
