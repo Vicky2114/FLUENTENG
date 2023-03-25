@@ -1,4 +1,4 @@
-const kue=require('kue');
+/*const kue=require('kue');
 const queue = require('../config/kue');
 
 const commentsMailer=require('../mailers/comment_mailer');
@@ -9,4 +9,4 @@ queue.process('emails',function(job,done){
     commentsMailer.newComment(job.data);
 
     done();
-})
+})*/

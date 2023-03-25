@@ -18,19 +18,11 @@ const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 
-//const chatServer = require('http').Server(app);
-//const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
-//chatServer.listen(5000);
-//console.log('chat server is listening on port 5000');
-const client = redis.createClient({
-    host: '127.0.0.1',
-    port: 6379,
-  });
-client.connect();
-client.on('connect', (err)=>{
-    if(err) throw err;
-    else console.log('Redis Connected..!');
-}); 
+const chatServer = require('http').Server(app);
+const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log('chat server is listening on port 5000');
+
 
 
 app.use(express.urlencoded());
