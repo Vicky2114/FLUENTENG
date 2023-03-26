@@ -3,7 +3,7 @@ class ChatEngine{
         this.chatBox = $(`#${chatBoxId}`);
         this.userEmail = userEmail;
 
-        this.socket = io.connect('https://fluenteng.onrender.com:3000');
+        this.socket = io('https://fluenteng.onrender.com');
 
         if (this.userEmail){
             this.connectionHandler();
