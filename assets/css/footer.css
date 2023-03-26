@@ -98,11 +98,14 @@ transition: all 0.3s ease;
 }
 
 @media screen and (max-width: 480px) {
+    .container1{
+      padding: 15px;
+    }
     .container{
-      padding: 25px;
+      padding: 19px;
     }
     .card{
-        width: 100px;
+        width: 295px;
         height: 400px;
     }
 
