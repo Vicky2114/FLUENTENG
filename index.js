@@ -18,7 +18,7 @@ const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 
-const chatServer = require('http').Server(app);
+const chatServer = require('https').Server(app);
 const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(3000);
 console.log('chat server is listening on port 3000');
