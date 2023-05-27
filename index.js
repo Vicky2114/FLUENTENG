@@ -1,7 +1,6 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
-const redis=require('redis');
 const port = process.env.PORT||8000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
@@ -18,9 +17,9 @@ const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 
-const chatServer = require('https').Server(app);
+const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
-chatServer.listen(3000);
+chatServer.listen(5000);
 console.log('chat server is listening on port 3000');
 
 
