@@ -8,9 +8,9 @@ const User = require('../models/user');
 passport.use(
     new GitHubStrategy(
       {
-        clientID: "d104e13435e012b39d97",
-        clientSecret: "2470e17192d260d6e974c53c37815441fa61c362",
-        callbackURL: 'http://localhost:8000/user/auth/github/callback',
+        clientID: "e5db873a1080b8552ae8",
+        clientSecret: "a3193058185d39dc53b596aa60ec9b6dac9b6329",
+        callbackURL: 'https://fluenteng.onrender.com/user/auth/github/callback',
       },
       function(accessToken, refreshToken, profile, done){
         // find a user
